@@ -25,3 +25,16 @@
 **Plan for tomorrow:** Finish form, wire up the `/api/audit` route, and get the happy path working end-to-end.
 
 ---
+
+## Day 3 — 2026-05-08
+**Hours worked:** 6
+
+**What I did:** Completed the form with persistence. Built `/api/audit` route with rate limiting and honeypot. Wired up `nanoid` for audit IDs. Got end-to-end flow working: form → API → store → redirect to results. Results page renders per-tool breakdown and savings hero.
+
+**What I learned:** `useParams` in Next.js App Router returns a `ReadonlyURLSearchParams` — needed to cast correctly for the `id` param.
+
+**Blockers / what I'm stuck on:** Anthropic API integration — need to handle timeouts and fallback gracefully without blocking the main audit response.
+
+**Plan for tomorrow:** AI summary with fallback, lead capture form, share URL.
+
+---

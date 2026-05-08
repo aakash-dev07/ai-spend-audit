@@ -33,3 +33,16 @@ _Three real conversations conducted during the build week. Names/initials used w
 **What it changed:** Made the share URL copy button more prominent on the results page. Added the framing "Share with your co-founder or finance team" rather than just "share your results."
 
 ---
+
+## Interview 3 — P.V., Engineering Manager, growth-stage startup (70 people, post-Series B)
+
+**Conducted:** Day 5, 20-minute call (Lenny's Slack #tools-and-resources cold outreach)
+
+**Direct quotes:**
+- "Our AI tool budget is bundled into a broader 'developer productivity' line item. Finance doesn't see it as a separate category."
+- "The thing that would actually get me to act is a number with a name attached — not 'you could save $X' but 'Cursor Business at 12 seats costs $480/month, Cursor Pro is $240/month, here's what you lose.'"
+- "I've had three vendors pitch me on AI cost savings this year. None of them showed me the actual comparison before asking for a meeting."
+
+**Most surprising thing:** At 70 people, they had *more* AI tool sprawl, not less — 6 different tools across teams, no centralised purchasing. The audit tool is potentially more valuable at this size, not less, because no one has visibility across teams.
+
+**What it changed:** Strengthened the per-tool breakdown to include the explicit "current spend → recommended spend → delta" format rather than just stating the savings. The finance person reading the audit needs to see both numbers, not just the delta. Adjusted the result card layout to show current plan and suggested plan side-by-side.
