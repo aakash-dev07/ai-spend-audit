@@ -38,3 +38,16 @@
 **Plan for tomorrow:** AI summary with fallback, lead capture form, share URL.
 
 ---
+
+## Day 4 — 2026-05-09
+**Hours worked:** 5
+
+**What I did:** Built `ai.ts` with the Anthropic claude-haiku call and template fallback. Added lead capture API route and the email form on the results page with honeypot. Share URL copy button. Did 2 of the 3 required user interviews (cold DMs on X).
+
+**What I learned:** Wrapping the Anthropic call in a try/catch with a non-awaited Promise timeout is cleaner than AbortController for short timeouts in Next.js API routes.
+
+**Blockers / what I'm stuck on:** Third interview subject hasn't replied. Will try Indie Hackers Slack tomorrow.
+
+**Plan for tomorrow:** Polish UI, write GTM/ECONOMICS/LANDING_COPY, finish user interviews.
+
+---

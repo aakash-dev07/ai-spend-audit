@@ -33,4 +33,10 @@ test("Cursor Pro for coding team is marked optimal", () => {
   expect(result.recommendation.monthlySavings).toBe(0);
 });
 
+// ─── Test 3: GitHub Copilot Enterprise at small team recommends downgrade ─────
+test("GitHub Copilot Enterprise at 10 seats recommends downgrade to Business", () => {
+  const result = auditTool(entry({ tool: "github_copilot", plan: "enterprise", seats: 10, monthlySpend: 390 }), "coding", 10);
+  expect(result.recommendation.action).toBe("downgrade");
+  expect(result.recommendation.monthlySavings).toBe(10 * (39 - 19)); // $200
+});
 
