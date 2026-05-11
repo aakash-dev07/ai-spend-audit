@@ -51,3 +51,17 @@
 **Plan for tomorrow:** Polish UI, write GTM/ECONOMICS/LANDING_COPY, finish user interviews.
 
 ---
+
+
+## Day 5 — 2026-05-11
+**Hours worked:** 5
+
+**What I did:** Got third user interview done (Indie Hackers Slack). Wrote GTM.md, ECONOMICS.md, LANDING_COPY.md, METRICS.md. Polished the results page — added Credex CTA card for >$500 savings case and "you're spending well" for optimal case. Added OG tags.
+
+**What I learned:** The user interviews surfaced that founders don't think in "AI tool spend" as a category — they think about it per product. The audit needs to meet them there, not ask them to categorize upfront.
+
+**Blockers / what I'm stuck on:** Lighthouse accessibility score at 87 — need to fix label/input associations and color contrast on muted text.
+
+**Plan for tomorrow:** Accessibility fixes, PRICING_DATA.md, PROMPTS.md, TESTS.md, CI setup.
+
+---

@@ -40,3 +40,13 @@ test("GitHub Copilot Enterprise at 10 seats recommends downgrade to Business", (
   expect(result.recommendation.monthlySavings).toBe(10 * (39 - 19)); // $200
 });
 
+
+// ─── Test 4: Claude Max at multiple seats recommends downgrade to Team ────────
+test("Claude Max at 3 seats recommends downgrade to Team", () => {
+  const result = auditTool(entry({ tool: "claude", plan: "max", seats: 3, monthlySpend: 300 }), "mixed", 15);
+  expect(result.recommendation.action).toBe("downgrade");
+  expect(result.recommendation.monthlySavings).toBe(3 * (100 - 30)); // $210
+  expect(result.recommendation.suggestedPlan).toBe("team");
+});
+
+
