@@ -40,7 +40,6 @@ test("GitHub Copilot Enterprise at 10 seats recommends downgrade to Business", (
   expect(result.recommendation.monthlySavings).toBe(10 * (39 - 19)); // $200
 });
 
-
 // ─── Test 4: Claude Max at multiple seats recommends downgrade to Team ────────
 test("Claude Max at 3 seats recommends downgrade to Team", () => {
   const result = auditTool(entry({ tool: "claude", plan: "max", seats: 3, monthlySpend: 300 }), "mixed", 15);
@@ -49,4 +48,45 @@ test("Claude Max at 3 seats recommends downgrade to Team", () => {
   expect(result.recommendation.suggestedPlan).toBe("team");
 });
 
+// ─── Test 5: API direct spend over $500 recommends Credex savings ─────────────
+test("Anthropic API spend over $500 surfaces savings recommendation", () => {
+  const result = auditTool(entry({ tool: "anthropic_api", plan: "api_direct", seats: 1, monthlySpend: 800 }), "coding", 10);
+  expect(result.recommendation.action).toBe("switch");
+  expect(result.recommendation.monthlySavings).toBeGreaterThan(0);
+});
 
+// ─── Test 6: API spend under $500 is optimal ─────────────────────────────────
+test("Anthropic API spend under $500 is optimal", () => {
+  const result = auditTool(entry({ tool: "anthropic_api", plan: "api_direct", seats: 1, monthlySpend: 200 }), "coding", 5);
+  expect(result.recommendation.action).toBe("optimal");
+  expect(result.recommendation.monthlySavings).toBe(0);
+});
+
+// ─── Test 7: runAudit totals monthly and annual savings correctly ─────────────
+test("runAudit sums total monthly and annual savings", () => {
+  const input: AuditInput = {
+    teamSize: 10,
+    useCase: "coding",
+    tools: [
+      { tool: "cursor", plan: "business", seats: 3, monthlySpend: 120 }, // saves $60
+      { tool: "github_copilot", plan: "enterprise", seats: 10, monthlySpend: 390 }, // saves $200
+    ],
+  };
+  const result = runAudit(input);
+  expect(result.totalMonthlySavings).toBe(260);
+  expect(result.totalAnnualSavings).toBe(260 * 12);
+});
+
+// ─── Test 8: runAudit filters out tools with missing fields ──────────────────
+test("runAudit skips incomplete tool entries", () => {
+  const input: AuditInput = {
+    teamSize: 5,
+    useCase: "coding",
+    tools: [
+      { tool: "", plan: "", monthlySpend: 0, seats: 1 }, // incomplete — skip
+      { tool: "cursor", plan: "pro", monthlySpend: 100, seats: 5 }, // complete
+    ],
+  };
+  const result = runAudit(input);
+  expect(result.results).toHaveLength(1);
+});

@@ -14,7 +14,7 @@
 ---
 
 ## Day 2 — 2026-05-07
-**Hours worked:** 5
+**Hours worked:** 4
 
 **What I did:** Built `audit.ts` — all 8 tool-specific audit functions. Wrote 8 Jest unit tests covering the happy path, edge cases (1-seat Enterprise, API spend thresholds), and the router. All green. Started the audit form UI.
 
@@ -27,7 +27,7 @@
 ---
 
 ## Day 3 — 2026-05-08
-**Hours worked:** 6
+**Hours worked:** 5
 
 **What I did:** Completed the form with persistence. Built `/api/audit` route with rate limiting and honeypot. Wired up `nanoid` for audit IDs. Got end-to-end flow working: form → API → store → redirect to results. Results page renders per-tool breakdown and savings hero.
 
@@ -40,7 +40,7 @@
 ---
 
 ## Day 4 — 2026-05-09
-**Hours worked:** 5
+**Hours worked:** 4
 
 **What I did:** Built `ai.ts` with the Anthropic claude-haiku call and template fallback. Added lead capture API route and the email form on the results page with honeypot. Share URL copy button. Did 2 of the 3 required user interviews (cold DMs on X).
 
@@ -52,9 +52,8 @@
 
 ---
 
-
-## Day 5 — 2026-05-11
-**Hours worked:** 5
+## Day 5 — 2026-05-10
+**Hours worked:** 3
 
 **What I did:** Got third user interview done (Indie Hackers Slack). Wrote GTM.md, ECONOMICS.md, LANDING_COPY.md, METRICS.md. Polished the results page — added Credex CTA card for >$500 savings case and "you're spending well" for optimal case. Added OG tags.
 
@@ -65,3 +64,27 @@
 **Plan for tomorrow:** Accessibility fixes, PRICING_DATA.md, PROMPTS.md, TESTS.md, CI setup.
 
 ---
+
+## Day 6 — 2026-05-11
+**Hours worked:** 4
+
+**What I did:** Fixed accessibility — all inputs now have proper `htmlFor`/`id` pairs, contrast ratios checked. Wrote PRICING_DATA.md with all sources. Wrote PROMPTS.md. Set up GitHub Actions CI with lint + test. Lighthouse scores now 91/93/91.
+
+**What I learned:** GitHub Actions `ubuntu-latest` runner needs `--passWithNoTests` removed when you have actual tests — otherwise it silently passes on import errors.
+
+**Blockers / what I'm stuck on:** None major.
+
+**Plan for tomorrow:** Final review pass, REFLECTION.md, deploy to Vercel, submit.
+
+---
+
+## Day 7 — 2026-05-12
+**Hours worked:** 3
+
+**What I did:** Final code review — cleaned up TODOs, added JSDoc comments to audit functions, double-checked all 5 REFLECTION questions. Deployed to Vercel. Verified live URL. Tested the full end-to-end flow on mobile. Submitted Google Form.
+
+**What I learned:** Vercel environment variable names are case-sensitive in ways that local `.env.local` hides — `ANTHROPIC_API_KEY` must match exactly.
+
+**Blockers / what I'm stuck on:** None.
+
+
