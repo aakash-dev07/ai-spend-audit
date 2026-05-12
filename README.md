@@ -18,7 +18,7 @@ Built for Credex's Web Dev Intern Round 1 assignment.
 
 ## Live URL
 
-https://your-app.vercel.app
+https://ai-spend-audit-wine.vercel.app/
 
 ---
 
@@ -27,7 +27,7 @@ https://your-app.vercel.app
 You need Node.js 18+.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-spend-audit
+git clone https://github.com/aakash-dev07/ai-spend-audit
 cd ai-spend-audit
 npm install
 cp .env.example .env.local
